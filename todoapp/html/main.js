@@ -1,4 +1,4 @@
-import { div, ul, li, input } from './core/view.js';
+import { h1, div, ul, li, input, addStylesheet} from './core/view.js';
 
 function transition(state, action) {
 	switch (action.type) {
@@ -44,7 +44,7 @@ function todolist(state) {
 
 function ui(state) {
 	return div({}, [
-		div({}, ["Todo App"]),
+		h1({},['Todos Apps']),
 		todolist(state)
 	]);
 }
@@ -69,6 +69,7 @@ async function init() {
 	// TODO: Fetch initial state from the server
 	state = await fetchState();
 	render();
+	addStylesheet('style.css');
 }
 
 document.addEventListener('DOMContentLoaded', init);

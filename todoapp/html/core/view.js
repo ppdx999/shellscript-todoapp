@@ -17,8 +17,17 @@ function el(tag, props = {}, children = []) {
 	return element;
 }
 
+export function addStylesheet(href) {
+	const link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.href = href;
+	document.head.appendChild(link);
+}
+
 // HTML elements generator
+export const h1 = (props, children) => el('h1', props, children);
 export const div = (props, children) => el('div', props, children);
 export const ul = (props, children) => el('ul', props, children);
 export const li = (props, children) => el('li', props, children);
 export const input = (props) => el('input', props);
+
