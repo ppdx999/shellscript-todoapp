@@ -26,6 +26,14 @@ Apacheの設定ファイルに以下の設定を追加してください。(os�
         Require all granted
     </Directory>
 
+    ScriptAlias /cgi-bin/ "/srv/http/todoapp/cgi/"
+
+    <Directory "/srv/http/todoapp/cgi">
+        Options +ExecCGI
+        AddHandler cgi-script .cgi
+        Require all granted
+    </Directory>
+
     ErrorLog /var/log/httpd/todoapp_error.log
     CustomLog /var/log/httpd/todoapp_access.log combined
 </VirtualHost>
