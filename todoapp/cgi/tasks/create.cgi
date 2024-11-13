@@ -4,7 +4,7 @@
 # Initialize
 
 # Setup the environment
-homd="$(d=${0%/*}/; [ "_$d" = "_$0/" ] && d='./'; cd "$d.."; pwd)"
+homd="$(d=${0%/*}/; [ "_$d" = "_$0/" ] && d='./'; cd "$d../.."; pwd)"
 . $homd/config/common.shlib
 timestamp=$(date '+%Y%m%d%H%M%S')
 cmdname=$(basename $0)
