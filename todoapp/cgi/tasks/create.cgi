@@ -72,7 +72,7 @@ expiredat=$(cat $tmp-name | nameread expiredat)
 
 # If the data to be appended is under 4096 bytes, it is atomic.
 # 1: id, 2: title, 3: is_completed, 4: createdat, 5: expiredat
-printf "$timestamp_$$ $title 0 $timestamp $expiredat\n" >> $datad/tasks
+printf "$timestamp.$$ $title 0 $timestamp $expiredat\n" >> $datad/tasks
 ERROR_CHECK "Failed to save task"
 
 
