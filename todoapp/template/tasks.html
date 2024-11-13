@@ -3,7 +3,11 @@
 	<li id="task-%1" class="todo-item">
 		<input type="checkbox" id="task-%1" class="todo-checkbox" onchange="toggleTaskStatus(%1)" />
 		<label for="task-%1" class="todo-text">%2</label>
-		<button class="delete-button" onclick="deleteTask(%1)">
+		<button class="delete-button"
+        hx-post="/cgi/tasks/delete.cgi"
+        hx-target="#todo-list"
+        hx-swap="outerHTML"
+        name="task-id" value="%1">
 			<trash-icon></trash-icon>
 		</button>
 	</li>
