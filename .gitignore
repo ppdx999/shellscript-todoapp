@@ -1,0 +1,6 @@
+todoapp/input/*
+!todoapp/input/.htaccess
+todoapp/log/*
+!todoapp/log/.htaccess
+todoapp/data/*
+!todoapp/data/.htaccess

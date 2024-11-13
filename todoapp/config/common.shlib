@@ -1,0 +1,10 @@
+
+# Home directory. This variable is set in each script
+#homd=
+
+PATH=$homd/tool:$homd/shell:$PATH
+
+readonly logd=$homd/log
+readonly datad=$homd/data
+readonly inpd=$homd/input
+readonly tpld=$homd/template

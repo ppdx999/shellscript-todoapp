@@ -7,7 +7,8 @@ ApacheとShellscriptを使用したTodoアプリケーションです。
 ### 必要なソフトウェアのインストール
 
 - Apache
-- POSIX互換のシェル(例: bash, zsh)
+- bash
+- python3
 
 ### Apacheの設定
 
