@@ -1,15 +1,24 @@
 <ul id="todo-list" class="todo-list">
-	<!--- ___TASK_ITEMS___ --->
-	<li id="task-%1" class="todo-item">
-		<input type="checkbox" id="task-%1" class="todo-checkbox" onchange="toggleTaskStatus(%1)" />
-		<label for="task-%1" class="todo-text">%2</label>
-		<button class="delete-button"
-        hx-post="/cgi/tasks/delete.cgi"
-        hx-target="#todo-list"
-        hx-swap="outerHTML"
-        name="task-id" value="%1">
-			<trash-icon></trash-icon>
-		</button>
-	</li>
-	<!--- ___TASK_ITEMS___ --->
+  <!--- ___TASK_ITEMS___ --->
+  <li id="task-%1" class="todo-item">
+    <input
+      type="checkbox"
+      id="task-%1"
+      class="todo-checkbox"
+      onchange="toggleTaskStatus(%1)"
+    />
+    <label for="task-%1" class="todo-text">%2</label>
+    <button
+      class="delete-button"
+      hx-post="/cgi/tasks/delete.cgi"
+      hx-target="#todo-list"
+      hx-swap="outerHTML"
+      name="task-id"
+      value="%1"
+      hx-confirm="Are you sure you want to delete this task?"
+    >
+      <trash-icon></trash-icon>
+    </button>
+  </li>
+  <!--- ___TASK_ITEMS___ --->
 </ul>

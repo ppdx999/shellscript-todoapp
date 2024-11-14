@@ -4,7 +4,12 @@
 # Initialize
 
 # Setup the environment
-homd="$(d=${0%/*}/; [ "_$d" = "_$0/" ] && d='./'; cd "$d../.."; pwd)"
+homd="$(
+	d=${0%/*}/
+	[ "_$d" = "_$0/" ] && d='./'
+	cd "$d../.."
+	pwd
+)"
 . $homd/config/common.shlib
 timestamp=$(date '+%Y%m%d%H%M%S')
 cmdname=$(basename $0)
@@ -14,30 +19,30 @@ umask 022
 tmp=/tmp/$cmdname.$timestamp.$$
 
 # Define util functions
-ERROR_CHECK () {
+ERROR_CHECK() {
 	[ $(plus ${PIPESTATUS[@]}) -gt 0 ] && ERROR_EXIT "$@"
 }
 
-ERROR_EXIT () {
+ERROR_EXIT() {
 	cat <<-__HTTP_HEADER
 		Status: 500 Internal Server Error
 		Content-Type: text/plain
 
 		500 Internal Server Error
-__HTTP_HEADER
+	__HTTP_HEADER
 	echo "$@"
 	[ -n "$tmp" ] && rm -f $tmp*
 	exit 1
 }
 
 # output exec error log
-exec 2> $logd/LOG.$cmdname.$timestamp.$$
+exec 2>$logd/LOG.$cmdname.$timestamp.$$
 
 ######################################################################
 # Handle POST data
 if [ ! -z "$CONTENT_LENGTH" -a "$CONTENT_LENGTH" -gt 0 ]; then
 	dd bs=${CONTENT_LENGTH:-0} count=1 2>/dev/null |
-	cgi-name > $tmp-name
+		cgi-name >$tmp-name
 	ERROR_CHECK
 else
 	false
@@ -47,7 +52,6 @@ fi
 id=$(cat $tmp-name | nameread task-id)
 [ -z "$id" ] && ERROR_EXIT "id is empty"
 
-
 ######################################################################
 # Delete Task
 
@@ -55,7 +59,7 @@ id=$(cat $tmp-name | nameread task-id)
 mkdir $datad/.tasks
 ERROR_CHECK
 
-cat $datad/tasks | grep -v "^$id" > $tmp-tasks
+cat $datad/tasks | grep -v "^$id" >$tmp-tasks
 ERROR_CHECK
 
 mv $tmp-tasks $datad/tasks
@@ -71,11 +75,9 @@ echo "Content-Type: text/html"
 echo ""
 
 cat $tpld/tasks.html |
-mojihame -l___TASK_ITEMS___ - $datad/tasks
-
+	mojihame -l___TASK_ITEMS___ - $datad/tasks
 
 ######################################################################
 # Finalize
 rm -f $tmp*
 exit 0
-

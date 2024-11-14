@@ -1,7 +1,7 @@
 class TrashIcon extends HTMLElement {
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: 'open' });
+    const shadow = this.attachShadow({ mode: "open" });
 
     // Shadow DOM内にSVGを埋め込み、デフォルトのサイズを設定
     shadow.innerHTML = `
@@ -21,23 +21,23 @@ class TrashIcon extends HTMLElement {
   }
 
   connectedCallback() {
-    const svg = this.shadowRoot.querySelector('svg');
-    const width = this.getAttribute('width') || '16px';
-    const height = this.getAttribute('height') || '16px';
+    const svg = this.shadowRoot.querySelector("svg");
+    const width = this.getAttribute("width") || "16px";
+    const height = this.getAttribute("height") || "16px";
 
     svg.style.width = width;
     svg.style.height = height;
   }
 
   static get observedAttributes() {
-    return ['width', 'height'];
+    return ["width", "height"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    const svg = this.shadowRoot.querySelector('svg');
-    if (name === 'width') svg.style.width = newValue;
-    if (name === 'height') svg.style.height = newValue;
+    const svg = this.shadowRoot.querySelector("svg");
+    if (name === "width") svg.style.width = newValue;
+    if (name === "height") svg.style.height = newValue;
   }
 }
 
-customElements.define('trash-icon', TrashIcon);
+customElements.define("trash-icon", TrashIcon);

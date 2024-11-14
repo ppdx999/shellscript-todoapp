@@ -12,35 +12,51 @@ http://yuilibrary.com/license/
  * Percents could work for IE, but for backCompat purposes, we are using keywords.
  * x-small is for IE6/7 quirks mode.
  */
-.yui3-cssfonts body, .yui3-cssfonts {
-	font: 13px/1.231 arial, helvetica, clean, sans-serif;
- *font-size:small; /* for IE */
- *font:x-small; /* for IE in quirks mode */
+.yui3-cssfonts body,
+.yui3-cssfonts {
+  font:
+    13px/1.231 arial,
+    helvetica,
+    clean,
+    sans-serif;
+  *font-size: small; /* for IE */
+  *font: x-small; /* for IE in quirks mode */
 }
 /**
  * Nudge down to get to 13px equivalent for these form elements
- */ 
-.yui3-cssfonts select, .yui3-cssfonts input, .yui3-cssfonts button, .yui3-cssfonts textarea {
-	font: 99% arial, helvetica, clean, sans-serif;
+ */
+.yui3-cssfonts select,
+.yui3-cssfonts input,
+.yui3-cssfonts button,
+.yui3-cssfonts textarea {
+  font:
+    99% arial,
+    helvetica,
+    clean,
+    sans-serif;
 }
 /**
  * To help tables remember to inherit
  */
 .yui3-cssfonts table {
-	font-size: inherit;
-	font-size:100%;
+  font-size: inherit;
+  font-size: 100%;
 }
 /**
  * Bump up IE to get to 13px equivalent for these fixed-width elements
  */
-.yui3-cssfonts pre, .yui3-cssfonts code, .yui3-cssfonts kbd, .yui3-cssfonts samp, .yui3-cssfonts tt {
-	font-family: monospace;
- *font-size:108%;
-	line-height: 100%;
+.yui3-cssfonts pre,
+.yui3-cssfonts code,
+.yui3-cssfonts kbd,
+.yui3-cssfonts samp,
+.yui3-cssfonts tt {
+  font-family: monospace;
+  *font-size: 108%;
+  line-height: 100%;
 }
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssfonts-context {
-	display: none;
+  display: none;
 }
 
 /*====================================
@@ -48,68 +64,68 @@ Finish Reset Settings
 ====================================*/
 
 body {
-	font-family: Arial, sans-serif;
-	display: flex;
-	justify-content: center;
-	margin-top: 50px;
-	background-color: #151515;
-	color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  background-color: #151515;
+  color: #fff;
 }
 main {
-	max-width: 400px;
-	width: 100%;
-	padding: 20px;
-	background-color: #ffffff;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 h1 {
-	text-align: center;
-	font-size: 24px;
-	margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 #task-create-form {
-	display: flex;
-	margin-bottom: 15px;
+  display: flex;
+  margin-bottom: 15px;
 }
 #task-create-form input {
-	flex-grow: 1;
-	padding: 8px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	margin-right: 8px;
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 8px;
 }
 #task-create-form button {
-	padding: 8px 12px;
-	background-color: #007bff;
-	color: #fff;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 .todo-list {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 .todo-item {
-	display: flex;
-	align-items: center;
-	padding: 8px;
-	margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
 }
 .todo-checkbox {
-	margin-right: 8px;
+  margin-right: 8px;
 }
 .todo-text {
-	flex-grow: 1;
+  flex-grow: 1;
 }
 .todo-completed {
-	text-decoration: line-through;
-	color: #888;
+  text-decoration: line-through;
+  color: #888;
 }
 .delete-button {
-	background: none;
-	border: none;
-	color: #e63946;
-	cursor: pointer;
+  background: none;
+  border: none;
+  color: #e63946;
+  cursor: pointer;
 }
